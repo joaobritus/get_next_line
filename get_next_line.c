@@ -6,13 +6,13 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:00:44 by jaragao-          #+#    #+#             */
-/*   Updated: 2022/12/07 15:15:40 by jaragao-         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:08:02 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*index(char *line)
+char	*index(char *line)//////
 {
 	char	*rightindex;
 	int		i;
