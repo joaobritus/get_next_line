@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2022/12/12 17:08:26 by jaragao-         ###   ########.fr       */
+/*   Updated: 2022/12/12 17:10:41 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,15 @@ void	ft_index(char *buffer)
 		buffer[y++] = '\0';
 }
 
-char	*ft_strchar(char *str, char c)
+int	ft_strchar(char *str, char c)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != c)
-		str++;
-	return (str);
+	while (str[i] != c && str[i])
+		i++;
+	if (str[i] == c)
+		return (1);
+	else
+		return (0);
 }
