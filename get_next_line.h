@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:08:43 by jaragao-          #+#    #+#             */
-/*   Updated: 2022/12/12 14:14:51 by jaragao-         ###   ########.fr       */
+/*   Updated: 2022/12/12 17:05:33 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchar(char *str, char c);
-int		ft_strlen(char *str);
+void	ft_index(char *buffer);
+void	ft_clean(char *line);
 
 #endif
