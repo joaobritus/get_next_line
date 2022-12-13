@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2022/12/12 17:10:41 by jaragao-         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:30:02 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,13 @@ char	*ft_strjoin(char *s1, char *s2)
 		s1 = malloc(1);
 	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	while (s1[i])
-		str[i++] = s1[i++];
+	{
+		str[i] = s1[i];
+		i++;
+	}
 	while (s2[y])
 		str[i++] = s2[y++];
-	free (s1);
+	free(s1);
 	return (str);
 }
 
@@ -41,7 +44,6 @@ void	ft_clean(char *line)
 	i++;
 	while (line[i])
 		line[i++] = '\0';
-	return (line);
 }
 
 void	ft_index(char *buffer)
@@ -52,6 +54,11 @@ void	ft_index(char *buffer)
 	i = 0;
 	while (buffer[i] != '\n' && buffer[i])
 		i++;
+	if (buffer[i] == '\0')
+	{
+		free(buffer);
+		return ;
+	}
 	y = 0;
 	while (buffer[i])
 		buffer[y++] = buffer[i++];
@@ -70,4 +77,14 @@ int	ft_strchar(char *str, char c)
 		return (1);
 	else
 		return (0);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
