@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:08:43 by jaragao-          #+#    #+#             */
-/*   Updated: 2022/12/13 14:39:48 by jaragao-         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:53:13 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 # include <stdarg.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
 # include <unistd.h>
 
 char	*get_next_line(int fd);

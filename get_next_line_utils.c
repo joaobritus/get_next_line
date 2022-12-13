@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2022/12/13 14:30:02 by jaragao-         ###   ########.fr       */
+/*   Updated: 2022/12/13 16:30:20 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,14 @@ char	*ft_strjoin(char *s1, char *s2)
 	i = 0;
 	y = 0;
 	if (!s1)
+	{
 		s1 = malloc(1);
+		if (!s1)
+			return (NULL);
+	}
 	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!str)
+		return (NULL);
 	while (s1[i])
 	{
 		str[i] = s1[i];
@@ -30,6 +36,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	while (s2[y])
 		str[i++] = s2[y++];
+	str[i] = '\0';
 	free(s1);
 	return (str);
 }
