@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2022/12/13 17:15:08 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/03 12:25:46 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_clean(char *line)
 	int	i;
 
 	i = 0;
-	while (line[i] != '\n')
+	while ((line[i] != '\n') && (line[i]))
 		i++;
 	i++;
 	while (line[i])
