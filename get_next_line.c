@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:00:44 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/03 16:07:54 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/04 16:10:50 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ char	*get_next_line(int fd)
 	static char	buffer[BUFFER_SIZE + 1];
 	char		*line;
 
+	line = NULL;
 	if (BUFFER_SIZE < 1 || read(fd, 0, 0) <= 0)
 		return (NULL);
-	if (buffer[0] != '\0')
+	line = ft_strjoin(line, buffer);
+	if (ft_strchar(line, '\n'))
 	{
-		line = ft_restart(buffer);
-		if (ft_strchar(line, '\n'))
-			return (line);
-		if (!line)
-			return (NULL);
+		line = ft_clean(line);
+		ft_index(buffer);
+		return (line);
 	}
 	while (read(fd, buffer, BUFFER_SIZE) > 0)
 	{
@@ -49,8 +49,6 @@ char	*get_next_line(int fd)
 		if (ft_strchar(buffer, '\n'))
 			break ;
 	}
-	if (read(fd, buffer, BUFFER_SIZE) == -1)
-		return (NULL);
 	line = ft_clean(line);
 	ft_index(buffer);
 	return (line);
@@ -68,3 +66,16 @@ char	*get_next_line(int fd)
 	free(line);
 	return (0);
 }*/
+
+/*
+versao anterior
+
+if (buffer[0] != '\0')
+	{
+		line = ft_restart(buffer);
+		if (ft_strchar(line, '\n'))
+			return (line);
+		if (!line)
+			return (NULL);
+	}
+*/
