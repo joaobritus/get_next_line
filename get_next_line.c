@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:00:44 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/18 15:45:37 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/18 16:32:14 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*get_next_line(int fd)
 	line = ft_strjoin(line, buffer);
 	if (ft_strchar(line, '\n'))
 	{
-		line = ft_clean(line);
 		ft_index(buffer);
 		return (line);
 	}
@@ -33,9 +32,6 @@ char	*get_next_line(int fd)
 		if (ft_strchar(buffer, '\n'))
 			break ;
 	}
-	if (read(fd, 0, 0) < 0)
-		return (NULL);
-	line = ft_clean(line);
 	ft_index(buffer);
 	return (line);
 }
