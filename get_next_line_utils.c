@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/04 16:46:30 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/18 15:49:34 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@ char	*ft_strjoin(char *line, char *buffer)
 
 	i = 0;
 	y = 0;
-	if (!line)
-	{
-		line = malloc(1);
-		if (!line)
-			return (NULL);
-	}
 	str = malloc(ft_strlen(line) + ft_strlen(buffer) + 1);
 	if (!str)
 		return (NULL);
@@ -88,7 +82,7 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while ((str[i] != '\n') && (str[i]))
 		i++;
 	return (i);
 }

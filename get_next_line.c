@@ -6,27 +6,11 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:00:44 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/04 16:10:50 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/18 15:45:37 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*ft_restart(char *buffer)
-{
-	char	*line;
-
-	line = malloc(ft_strlen(buffer) + 1);
-	if (ft_strchar(buffer, '\n'))
-	{
-		line = ft_strjoin(line, buffer);
-		line = ft_clean(line);
-		ft_index(buffer);
-		return (line);
-	}
-	line = ft_strjoin(line, buffer);
-	return (line);
-}
 
 char	*get_next_line(int fd)
 {
@@ -49,6 +33,8 @@ char	*get_next_line(int fd)
 		if (ft_strchar(buffer, '\n'))
 			break ;
 	}
+	if (read(fd, 0, 0) < 0)
+		return (NULL);
 	line = ft_clean(line);
 	ft_index(buffer);
 	return (line);
@@ -66,16 +52,3 @@ char	*get_next_line(int fd)
 	free(line);
 	return (0);
 }*/
-
-/*
-versao anterior
-
-if (buffer[0] != '\0')
-	{
-		line = ft_restart(buffer);
-		if (ft_strchar(line, '\n'))
-			return (line);
-		if (!line)
-			return (NULL);
-	}
-*/
