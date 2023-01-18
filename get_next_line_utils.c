@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/18 16:28:21 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/18 17:09:32 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,11 @@ char	*ft_strjoin(char *line, char *buffer)
 		str[i] = line[i];
 		i++;
 	}
-	while ((buffer[y] != '\0') && (buffer[y]))
+	while ((buffer[y] != '\n') && (buffer[y]))
 		str[i++] = buffer[y++];
 	str[i] = '\0';
 	free(line);
 	return (str);
-}
-
-char	*ft_clean(char *line)
-{
-	int	i;
-
-	i = 0;
-	while ((line[i] != '\n') && line[i])
-		i++;
-	if (line[i] == '\n')
-		i++;
-	while (line[i])
-		line[i++] = '\0';
-	return (line);
 }
 
 void	ft_index(char *buffer)
@@ -57,10 +43,11 @@ void	ft_index(char *buffer)
 	i = 0;
 	while (buffer[i] != '\n' && buffer[i])
 		i++;
+	i++;
 	y = 0;
-	while (buffer[i])
+	while (buffer[i] && buffer)
 		buffer[y++] = buffer[i++];
-	while (buffer[y])
+	while (buffer[y] && buffer)
 		buffer[y++] = '\0';
 }
 
