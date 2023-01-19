@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/19 16:09:38 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:15:05 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strjoin(char *line, char *buffer)
 		str[i] = line[i];
 		i++;
 	}
-	while ((buffer[y] != '\n') && (buffer[y]))
+	while ((buffer[y] != '\n') && buffer[y])
 		str[i++] = buffer[y++];
 	if (buffer[y] == '\n')
 		str[i++] = '\n';
