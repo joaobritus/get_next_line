@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/18 17:09:32 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/19 14:24:53 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char *line, char *buffer)
 
 	i = 0;
 	y = 0;
+	if (!line)
+		line = "";
 	str = malloc(ft_strlen(line) + ft_strlen(buffer) + 1);
 	if (!str)
 		return (NULL);
@@ -40,6 +42,8 @@ void	ft_index(char *buffer)
 	int	i;
 	int	y;
 
+	if (!buffer)
+		return ;
 	i = 0;
 	while (buffer[i] != '\n' && buffer[i])
 		i++;
@@ -55,6 +59,8 @@ int	ft_strchar(char *str, char c)
 {
 	int	i;
 
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i] != c && str[i])
 		i++;
@@ -68,6 +74,8 @@ int	ft_strlen(char *str)
 {
 	int	i;
 
+	if (!str)
+		return (-1);
 	i = 0;
 	while ((str[i] != '\n') && (str[i]))
 		i++;
