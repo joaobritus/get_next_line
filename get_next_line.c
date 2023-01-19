@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:00:44 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/19 15:15:38 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:05:45 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	line = NULL;
-	if (BUFFER_SIZE < 1 || read(fd, 0, 0) <= 0)
+	if (BUFFER_SIZE < 1 || read(fd, 0, 0) < 0)
 		return (NULL);
 	line = ft_strjoin(line, buffer);
 	if (ft_strchar(buffer, '\n'))
@@ -32,10 +32,6 @@ char	*get_next_line(int fd)
 		if (ft_strchar(buffer, '\n'))
 			break ;
 	}
-	if (read(fd, buffer, BUFFER_SIZE) == -1)
-		return (NULL);
-	if (read(fd, buffer, BUFFER_SIZE) == 0)
-		return (line);
 	ft_index(buffer);
 	return (line);
 }

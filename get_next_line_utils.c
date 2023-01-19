@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/19 15:00:42 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:09:38 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ char	*ft_strjoin(char *line, char *buffer)
 
 	i = 0;
 	y = 0;
-	if (!buffer)
-		return (line);
-	if (!line)
-		line = "";
+	if (buffer[0] == '\0')
+		return (NULL);
 	str = malloc(ft_strlen(line) + ft_strlen(buffer) + 1);
 	if (!str)
 		return (NULL);
-	while (line[i])
+	while (line && line[i])
 	{
 		str[i] = line[i];
 		i++;
 	}
 	while ((buffer[y] != '\n') && (buffer[y]))
 		str[i++] = buffer[y++];
+	if (buffer[y] == '\n')
+		str[i++] = '\n';
 	str[i] = '\0';
 	free(line);
 	return (str);
@@ -44,8 +44,6 @@ void	ft_index(char *buffer)
 	int	i;
 	int	y;
 
-	if (!buffer)
-		return ;
 	i = 0;
 	while (buffer[i] != '\n' && buffer[i])
 		i++;
@@ -77,9 +75,11 @@ int	ft_strlen(char *str)
 	int	i;
 
 	if (!str)
-		return (-1);
+		return (0);
 	i = 0;
 	while ((str[i] != '\n') && (str[i]))
+		i++;
+	if (str[i] == '\n')
 		i++;
 	return (i);
 }
