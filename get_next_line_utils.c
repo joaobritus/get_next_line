@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:11:05 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/20 15:43:44 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:48:57 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,10 @@ int	ft_strlen(char *str)
 	if (str[i] == '\n')
 		i++;
 	return (i);
+}
+
+char	*filed(char *line)
+{
+	free(line);
+	return (NULL);
 }

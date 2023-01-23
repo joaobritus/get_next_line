@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:08:43 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/19 15:31:28 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:49:46 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		ft_strchar(char *str, char c);
 void	ft_index(char *buffer);
 char	*ft_clean(char *line);
 int		ft_strlen(char *str);
+char	*filed(char *line);
 
 #endif
