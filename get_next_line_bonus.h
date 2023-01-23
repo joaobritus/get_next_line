@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:58:42 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/23 15:20:27 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:40:51 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #  define BUFFER_SIZE 10
 # endif
 
-# include <limits.h>
 # include <stdarg.h>
 # include <stdlib.h>
 # include <stdio.h>
