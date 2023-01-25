@@ -6,7 +6,7 @@
 /*   By: jaragao- <jaragao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:58:42 by jaragao-          #+#    #+#             */
-/*   Updated: 2023/01/23 16:40:51 by jaragao-         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:32:28 by jaragao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-char	*get_next_line_bonus(int fd);
+char	*get_next_line(int fd);
 char	*ft_strjoin(char *line, char *buffer);
 int		ft_strchar(char *str, char c);
 void	ft_index(char *buffer);
